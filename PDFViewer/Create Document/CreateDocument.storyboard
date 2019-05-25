@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sra-WY-vzf">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Document-->
+        <scene sceneID="DbT-Q6-cq5">
+            <objects>
+                <viewController id="d3V-Ib-zbm" customClass="CreateDocumentController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fcp-5b-FmD">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Document Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="afF-9A-C5u">
+                                <rect key="frame" x="15" y="85" width="738" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ds2-eL-bhI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="d3V-Ib-zbm" id="5e9-cN-6eC"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KMd-ZD-11c">
+                                <rect key="frame" x="15" y="135" width="738" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="v3F-mQ-znQ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="d3V-Ib-zbm" id="20e-1o-76c"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kfo-e2-F9U" firstAttribute="trailing" secondItem="afF-9A-C5u" secondAttribute="trailing" constant="15" id="RrL-Nd-8ca"/>
+                            <constraint firstItem="KMd-ZD-11c" firstAttribute="top" secondItem="afF-9A-C5u" secondAttribute="bottom" constant="20" id="c46-h3-eTs"/>
+                            <constraint firstItem="KMd-ZD-11c" firstAttribute="leading" secondItem="kfo-e2-F9U" secondAttribute="leading" constant="15" id="j53-N9-Cie"/>
+                            <constraint firstItem="kfo-e2-F9U" firstAttribute="trailing" secondItem="KMd-ZD-11c" secondAttribute="trailing" constant="15" id="nRn-Wz-LQM"/>
+                            <constraint firstItem="afF-9A-C5u" firstAttribute="top" secondItem="kfo-e2-F9U" secondAttribute="top" constant="15" id="rQJ-mN-oMt"/>
+                            <constraint firstItem="afF-9A-C5u" firstAttribute="leading" secondItem="kfo-e2-F9U" secondAttribute="leading" constant="15" id="yWA-M1-2r5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kfo-e2-F9U"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Document" id="veQ-C2-8oY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XFX-eT-Oig">
+                            <connections>
+                                <action selector="cancel" destination="d3V-Ib-zbm" id="Xg2-aD-UIM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="kbS-iy-Ubw">
+                            <connections>
+                                <action selector="saveDocument" destination="d3V-Ib-zbm" id="lfi-wx-Zwg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="authorTextField" destination="KMd-ZD-11c" id="H0Y-UC-VOz"/>
+                        <outlet property="titleTextField" destination="afF-9A-C5u" id="bd9-xo-4nX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDM-RP-klR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5" y="77"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ekj-Zm-ntB">
+            <objects>
+                <navigationController id="Sra-WY-vzf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VSZ-3F-Hmi">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="d3V-Ib-zbm" kind="relationship" relationship="rootViewController" id="9ty-12-lag"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="93f-Zu-2JS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-726" y="77"/>
+        </scene>
+    </scenes>
+</document>
